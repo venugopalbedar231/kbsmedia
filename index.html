@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBS Media</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="app.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+     <link rel="icon" type="image/x-icon" href="https://www.kgpchain.org/logo.png">
+
+
+    <!-- ionicons -->
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+     <!-- google font icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Lobster&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <span class="logo">KBS Media</span>
+                <button id="toggle-btn" onclick=toggleSidebar()>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+                </button>
+            </li>
+            <li class="active">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="illustrations.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m307-320-87-360 260-240 260 240-87 360H307Zm63-80h220l61-253-131-121v106q14 10 22 25t8 33q0 29-20.5 49.5T480-540q-29 0-49.5-20.5T410-610q0-18 8-33t22-25v-106L309-653l61 253ZM160-120l22-65q8-25 29-40t47-15h444q26 0 47 15t29 40l22 65H160Z"/></svg>
+                    <span>Reels</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="wallpaper.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-120q-33 0-56.5-23.5T120-200v-240h80v240h240v80H200Zm320 0v-80h240v-240h80v240q0 33-23.5 56.5T760-120H520ZM240-280l120-160 90 120 120-160 150 200H240ZM120-520v-240q0-33 23.5-56.5T200-840h240v80H200v240h-80Zm640 0v-240H520v-80h240q33 0 56.5 23.5T840-760v240h-80Zm-140-40q-26 0-43-17t-17-43q0-26 17-43t43-17q26 0 43 17t17 43q0 26-17 43t-43 17Z"/></svg>                    
+                    <span>Messages</span>
+                </a>
+            </li>
+            <li>
+                <button class="dropdown-btn" onclick=toggleSubMenu(this)>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m300-300 280-80 80-280-280 80-80 280Zm180-120q-25 0-42.5-17.5T420-480q0-25 17.5-42.5T480-540q25 0 42.5 17.5T540-480q0 25-17.5 42.5T480-420Zm0 340q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Zm0-320Z"/></svg>
+                    <span>Explore</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="#">Trending</a></li>
+                        <li><a href="#">Likes</a></li>
+                        <li><a href="#">Comments</a></li>
+                        <li><a href="#">Recommendations</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li class="active">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M320-320h480v-480h-80v280l-100-60-100 60v-280H320v480Zm0 80q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm360-720h200-200Zm-200 0h480-480Z"/></svg>
+                    <span>Saved</span>
+                </a>
+            </li>
+            <!-- <li class="active">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>
+                    <span>Downloads</span>
+                </a>
+            </li> -->
+        </ul>
+    </nav>
+    <main>
+        <div class="maindiv">
+        <nav class="navbar">
+            
+            <ul id="menuList">
+                <li><div class="search"><input type="text" required>
+                    <label for=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+</svg> Search</label>
+                    </div>
+                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signin.html">Signin</a></li>
+            </ul>
+            <div class="navlogo">
+                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+            </div>
+        </nav>
+        <br><br>
+    <div class="container">
+        <h1 class"main-title">KBS Media</h1>
+        
+      <p>KBS Media is a social media–inspired web platform created for the Kharagpur Blockchain Society to centralize and showcase the community’s activities, announcements, events, and learning initiatives. The platform is designed to replicate essential social media functionalities such as posts, feeds, and interactions while maintaining a clean, modern interface tailored to a technical student community.
+
+This project aims to demonstrate front-end development skills, UI/UX design principles, and an understanding of how social platforms organize and present content. By cloning a social media page in a customized form, KBS Media highlights collaboration, innovation, and knowledge-sharing within the blockchain ecosystem at IIT Kharagpur.</p>
+    </div>
+    <!-- post section -->
+        <div class="post">
+            <div class="main_post">
+             <div class="profile">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww" alt="">
+                <h3>Vikram</h3> <span>. 2 h</span>
+             </div>
+
+             <div class="img">
+                <img src="https://images.unsplash.com/photo-1765211003245-08f447059d85?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0MHx8fGVufDB8fHx8fA%3D%3D" alt="">
+             </div>
+
+             <div class="engagement">
+                <div class="left">
+                    <i id="like-1" class="fa-regular fa-heart text-red-500 text-4xl like-button"></i>
+                    <span class="material-symbols-outlined">
+                        comment </span>
+                    <span class="material-symbols-outlined">
+                        send </span>
+                </div>
+                <div class="right">
+                    <span class="material-symbols-outlined">
+                        bookmark </span>
+                </div>
+             </div>
+            </div>
+
+        </div>
+
+        <div class="post">
+            <div class="main_post">
+             <div class="profile">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww" alt="">
+                <h3>Riya</h3> <span>. 2 h</span>
+             </div>
+
+             <div class="img">
+                <img src="https://images.unsplash.com/photo-1761839258803-21515f43190c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyOXx8fGVufDB8fHx8fA%3D%3D" alt="">
+             </div>
+
+             <div class="engagement">
+                <div class="left">
+                    <i id="like-2" class="fa-regular fa-heart text-red-500 text-4xl like-button"></i>
+                    <span class="material-symbols-outlined">
+                        comment </span>
+                    <span class="material-symbols-outlined">
+                        send </span>
+                </div>
+                <div class="right">
+                    <span class="material-symbols-outlined">
+                        bookmark </span>
+                </div>
+             </div>
+            </div>
+
+        </div>
+
+        <div class="post">
+            <div class="main_post">
+             <div class="profile">
+                <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJhbmRvbSUyMHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D" alt="">
+                <h3>Ngolo Kante</h3> <span>. 2 h</span>
+             </div>
+
+             <div class="img">
+                <img src="https://plus.unsplash.com/premium_photo-1767635218170-4bc4ad2ba565?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNnx8fGVufDB8fHx8fA%3D%3D" alt="">
+             </div>
+
+             <div class="engagement">
+                <div class="left">
+                    <i id="like-3" class="fa-regular fa-heart text-red-500 text-4xl like-button"></i>
+                    <span class="material-symbols-outlined">
+                        comment </span>
+                    <span class="material-symbols-outlined">
+                        send </span>
+                </div>
+                <div class="right">
+                    <span class="material-symbols-outlined">
+                        bookmark </span>
+                </div>
+             </div>
+            </div>
+
+        </div>
+
+    <!-- <div class="container imgcontainer"> -->
+      <!-- <h2>Lorem Ipsum</h2> -->
+      <!-- <img src="https://plus.unsplash.com/premium_photo-1758726036543-a5294a86066e?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""> -->
+        <!-- <img src="https://images.unsplash.com/photo-1590846083693-f23fdede3a7e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8MTA4MHgxOTIwfGVufDB8fDB8fHww" alt="">
+        <img src="https://images.unsplash.com/photo-1493509094819-bd2d26fac21b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fDEwODB4MTkyMHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+      <img src="https://images.unsplash.com/photo-1565800847038-b509fad821f8?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fDEwODB4MTkyMHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1510215744419-742d9dce947f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fDEwODB4MTkyMHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1705764237782-c41917eeaa11?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fDEwODB4MTkyMHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+      <img src="https://images.unsplash.com/flagged/photo-1556569950-a8c536b24443?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fDEwODB4MTkyMHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+        <img src="https://plus.unsplash.com/premium_photo-1672242577985-03a14f1389db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fDEwODB4MTkyMHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1757565388939-68e529c9652d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D" alt="">
+      <img src="https://images.unsplash.com/photo-1758944966906-bf638c9e218c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyNnx8fGVufDB8fHx8fA%3D%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1755018237548-702af1620458?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1755397467747-6160983f9694?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1744039016311-218616db2b7d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D" alt="">
+
+
+    </div> -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-424-56-56 280-280 280 280-56 56-224-223-224 223Z"/></svg></button>
+        <!-- FOOTER-->
+         <footer >
+            <div class="footer">
+                <div class="about">
+                    <img src="https://www.kgpchain.org/logo.png" alt="">
+                    <h2>KBS Media</h2>
+                </div>
+                <div class="f-links">
+                    <h3>Links</h3><br>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Reels</a></li>
+                        <li><a href="">Saved</a></li>
+                        <li><a href="">Explore</a></li>
+                    </ul>
+                </div>
+                <div class="f-links">
+                    <h3>Services</h3><br>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Reels</a></li>
+                        <li><a href="">Saved</a></li>
+                        <li><a href="">Explore</a></li>
+                    </ul>
+                </div>
+                <div class="address">
+                    <h3>Location</h3><br>
+                    <address><ion-icon name="location-outline"></ion-icon>
+                        IIT Kharagpur<br>
+                        West Bengal, India <br>
+                        +91 9380920295<br>
+                        Pin Code - 721301
+                    </address>
+                </div>
+            </div>
+        </footer> 
+    </main>
+</body>
+</html>
